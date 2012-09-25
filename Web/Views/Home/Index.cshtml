@@ -1,0 +1,64 @@
+﻿@{ ViewBag.Title = "Simple CSS grid"; Layout = "~/Views/Shared/_Layout.cshtml"; } 
+
+@section Header{
+<div class="grid">
+    <div id="intro" class="grid-3-5">
+        <h1><a href="@Url.Content("~/")">Simple CSS grid</a></h1>
+        <h2>Webdesing without the math</h2>
+        <p>Simple CSS grid is a 'CSS framework' that lets you focus on the stuff that really matters without thinking about widths, margins and floats to get your page layout.</p>
+        <div class="links">
+            <a href="@Url.Content("~/Content/downloads/simplecssgrid.zip")" class="download">Download</a> or @Html.ActionLink("read the docs", "index", "docs")
+        </div>
+    </div>
+    <div class="grid-2-5">
+        <ul class="menu">
+            <li> @Html.ActionLink("Home", "index", "home")</li>
+            <li> @Html.ActionLink("Documentation", "index", "docs")</li>
+            <li><a href="@Url.Content("~/Content/downloads/simplecssgrid.zip")">Download</a></li>
+        </ul>
+    </div>
+</div>
+}
+
+<div class="info">
+    <div class="grid-1-3">
+        <h1>
+            No columns</h1>
+        <span>Let's just keep it simple.</span>
+    </div>
+    <div class="grid-2-3">
+        <p>
+            Simple CSS grid is built around fractions instead of columns. When you want three
+            boxes next to each other you want them to be 1/3th of the width. When your want
+            four boxes next to each other you want them to be 1/4th of the width. You don't
+            need to think about wether you were using the 12, 16 of 24 column layout.</p>
+    </div>
+</div>
+<div class="info">
+    <div class="grid-1-3">
+        <h1>
+            No special classes</h1>
+        <span>Who needs firs, last, alpha and omega?</span>
+    </div>
+    <div class="grid-2-3">
+        <p>
+            Simple CSS grid give you three kinds of classes: grid, cell (grid-1-4 for example)
+            or the cell without the margin (grid-1-4-nomargin). By default all cells have 10
+            pixels margin left and right. When you want two cells touching each other you can
+            use the nomargin ones.</p>
+        <p>
+            You don't need to think about first or last classes in a row, it just works.</p>
+    </div>
+</div>
+<div class="info">
+    <div class="grid-1-3">
+        <h1>
+            Multiple resolutions</h1>
+        <span>720, 960 and 1080 by default.</span>
+    </div>
+    <div class="grid-2-3">
+        <p>
+            Instead of alway working with a width of 960 pixels, Simple CSS grid works for multiple
+            resolutions by default. Currently 720, 960 and 1080 are supported.</p>
+    </div>
+</div>

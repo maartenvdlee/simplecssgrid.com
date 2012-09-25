@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "Demo's";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="grid-1-4">
+    <ul class="docs-toc">
+        <li><a href="#">What is Simple CSS Grid</a></li>
+        <li><a href="#">Getting started</a></li>
+        <li>
+            <a href="#">The classes</a>
+            <ul>
+                <li><a href="#">Grid</a></li>
+                <li><a href="#">Grid cells</a></li>
+                <li><a href="#">No-margin grid cells</a></li>
+            </ul>
+        </li>
+
+        <li><a href="#">Borders and paddings</a></li>
+        <li>
+            <a href="#">View demo's</a>
+            <ul>
+                <li><a href="#">720</a></li>
+                <li><a href="#">960</a></li>
+                <li><a href="#">1080</a></li>
+                <li><a href="#">1200</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="grid-3-4">
+    <h1>Documentation</h1>
+    <h2>What is Simple CSS Grid?</h2>
+    <p>
+        Simple CSS grid is a 'CSS framework' that lets you focus on the stuff that really matters without thinking about widths, 
+        margins and floats to get your page layout. Simple CSS Grid knows the width of your page an can therefore define the widths 
+        for most of the sections in your page. Beacause it's based on fractions it is very easy to define two, three, four boxes next to each other etc.
+    </p>
+    <p>
+        By default the following pagewidths are supported: 720, 960, 1080, 1200 pixels. Because these widths are based on 120 pixels it's possible to devine them by 1, 2, 3, 4, 5, 6, 8, 10, 12.
+    </p>
+
+    <h2>Getting started</h2>
+    <p>There's not much to get started. Just download <a href="@Url.Content("~/Content/downloads/simplecssgrid.css")">the stylesheets</a>, let your website reference the stylesheet by it's width:</p>
+    <pre class="code">&lt;link href="simplecssgrid-960.css" rel="stylesheet" type="text/css" /&gt;</pre>
+    <p>Now you're set and can start using the supported classes.</p>
+
+    <h2>The classes</h2>
+    <h3>Grid</h3>
+    <p>The grid class is a basic class to provide a container for your layout and sets the default width. It is not necessary to use this class once for your page. This page for example uses the grid class inside the header to make the header background wider than 960 pixels.</p>
+    
+    <h3>Grid cells</h3>
+    <p>The grid cells are based on fractions of 1, 2, 3, 4, 5, 6, 8, 10, 12. This may seem odd in the first place but is in fact very powerfull. It's very common to think like: 'I want this part to be half of the page and the other half divided in two quarters.' Simple CSS Grid supports this by using the following classes: <span class="code">grid-1-2</span> or <span class="code">grid-2-4</span> and <span class="code">grid-1-4</span>. For example:</p>
+    <pre class="code">&lt;body&gt;
+    &lt;div class="grid"&gt;
+        &lt;div class="grid-1-2"&gt;
+            half of the page (1/2)
+        &lt;/div&gt;
+        &lt;div class="grid-1-4"&gt;
+            a quarter of the page (1/4)
+        &lt;/div&gt;
+        &lt;div class="grid-1-4"&gt;
+            a quarter of the page (1/4)
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;</pre>
+
+    <h3>No-margin grid cells</h3>
+    <p>Normally the grid cells have a standard margin of 10 pixels. This will work in most cases, but sometimes you don't want to use these margins. Sometimes you want no margin between grid cells and sometimes you want to make a grid cell act a a container for other grid cells. For this cases the no-margin grid cells can come in handy. These cells are like the normal grid cells but 20 pixels wider and without the margin of 10 pixels left and right. To use this classes you only have to use the suffix '-normargin' like: <span class="code">class="grid-1-3-nomargin"</span>.</p>
+    
+    <h2>Borders and paddings</h2>
+    <p>It's not possible to use a border or padding on an element that has one of the previously mentioned classes, but it's is very easy to work around this problem. Just define an element inside the grid cell en give this elment the desired border of padding.</p>
+
+    <h2>View demo's</h2>
+    <p>The following demo pages can help you get a better understanding of the inner workings of Simple CSS grid.</p>
+    <p>Basic demo for @Html.ActionLink("720", "demo", new {Id = 720}), @Html.ActionLink("960", "demo", new { Id = 960 }), @Html.ActionLink("1080", "demo", new { Id = 1080 }), @Html.ActionLink("1200", "demo", new { Id = 1200 }) pixels.</p>
+</div>
